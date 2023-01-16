@@ -121,7 +121,7 @@ void setup() {
   {    
     pinMode(mySwitches[x].Number, INPUT);
     mySwitches[x].State = digitalRead(mySwitches[x].Number);
-    mySwitches[x].Str = "Button_" + (String)(x+1);
+    mySwitches[x].Str = "BUTTON_" + (String)(x+1);
   }
    
   attachCommandCallbacks();
@@ -138,6 +138,8 @@ void SendSPADCmd(String Button, String State)
     messenger.sendCmdArg(Button);
     messenger.sendCmdArg(State);
     messenger.sendCmdEnd();
+
+    //Serial.print("\n");
 }
 
 void loop() {
